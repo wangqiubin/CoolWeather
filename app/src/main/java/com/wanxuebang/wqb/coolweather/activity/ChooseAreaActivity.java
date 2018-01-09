@@ -200,7 +200,6 @@ public class ChooseAreaActivity extends Activity {
                 });
             }
         });
-
     }
 
     private void showProgressDialog() {

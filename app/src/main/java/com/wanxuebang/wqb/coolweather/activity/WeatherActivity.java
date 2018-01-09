@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.wanxuebang.wqb.coolweather.R;
+import com.wanxuebang.wqb.coolweather.service.AutoUpdateService;
 import com.wanxuebang.wqb.coolweather.util.HttpCallbackListener;
 import com.wanxuebang.wqb.coolweather.util.HttpUtil;
 import com.wanxuebang.wqb.coolweather.util.Utility;
@@ -59,6 +60,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener {
             queryWeatherCode(countryCode);
         } else {
             showWeather();
+            Intent intent = new Intent(this, AutoUpdateService.class);
+            startActivity(intent);
         }
         switchCity.setOnClickListener(this);
         refrehWeather.setOnClickListener(this);
